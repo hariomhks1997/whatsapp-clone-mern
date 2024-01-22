@@ -19,8 +19,7 @@ route.post('/conversation/get', getConversation);
 route.post('/message/add', newMessage);
 route.get('/message/get/:id', getMessage);
 
-route.post('/file/upload', uploadImage);
-route.get('/file/:filename', getImage);
+
 
 
 export default route;
