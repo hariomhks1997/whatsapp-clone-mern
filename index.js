@@ -66,7 +66,7 @@ const password = process.env.DB_PASSWORD;
 Connection(username, password);
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+
 
 app.use(express.static("./client/build"))
 app.get("*",function(req,res){
