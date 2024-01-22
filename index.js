@@ -47,7 +47,7 @@ io.on('connection',  (socket) => {
     //send message
     socket.on('sendMessage', (data) => {
         const user = getUser(data.receiverId);
-        io.to(user.socketId).emit('getMessage', data)
+        io.emit('getMessage', data)
     })
 
     //disconnect
@@ -66,7 +66,7 @@ const password = process.env.DB_PASSWORD;
 Connection(username, password);
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors());
 
 app.use(express.static("./client/build"))
 app.get("*",function(req,res){
